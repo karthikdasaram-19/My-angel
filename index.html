@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I Feel About You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background video */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Dark overlay for readability */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 700px;
+      width: 90%;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.5s ease;
+      margin: auto;
+      margin-top: 5vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e75480;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #e75480;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .highlight {
+      background: #fff0f5;
+      padding: 15px;
+      border-left: 5px solid #e75480;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .heart {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-top: 30px;
+      animation: pulse 1.5s infinite;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  
+
+    .unmute-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      background: #e75480;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      z-index: 10;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .unmute-btn:hover {
+      background: #d6456d;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Video -->
+  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Unmute Button -->
+  <button class="unmute-btn" onclick="toggleMute()">🔊 Unmute</button>
+
+  <script>
+    const video = document.getElementById('bgVideo');
+    const btn = document.querySelector('.unmute-btn');
+
+    function toggleMute() {
+      video.muted = !video.muted;
+      btn.textContent = video.muted ? '🔊 Unmute' : '🔇 Mute';
+    }
+  </script>
+  <div class="card">
+    <h1>To You 🌸</h1>
+
+    <p>
+      I made this little webpage because sometimes words are easier to share
+      when they’re written quietly, from the heart.
+    </p>
+
+    <h2>How You Make Me Feel</h2>
+    <p>
+      Every time I see you or think about you, something inside me feels lighter.
+      You have this way of making ordinary moments feel special without even trying.
+    </p>
+
+    <div class="highlight">
+      <p>
+        You make me smile when I don’t expect to.
+        You make me feel calm, excited, and nervous — all at the same time.
+      </p>
+    </div>
+
+    <h2>What I Admire About You</h2>
+    <p>
+      It’s not just one thing. It’s the way you talk, the way you listen,
+      and the way you’re simply you. I admire your kindness, your strength,
+      and the little details that make you unique.
+    </p>
+
+    <h2>What I Wanted to Say</h2>
+    <p>
+      I don’t know what the future holds, but I do know this:
+      my feelings for you are real, honest, and come from a genuine place.
+      I just wanted you to know how much you mean to me.
+    </p>
+
+    <div class="heart">❤️</div>
+
+    <footer>
+      Made with honesty and courage
+    </footer>
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
